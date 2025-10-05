@@ -1,37 +1,75 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
 import { FolderKanban, Sparkles, Clock, TrendingUp } from "lucide-react"
+import { useEffect, useState } from "react"
+
+interface Stats {
+  totalGenerations: number
+  weekGenerations: number
+  lastMonthGenerations: number
+}
 
 export function DashboardStats() {
-  const stats = [
+  const [stats, setStats] = useState<Stats>({
+    totalGenerations: 0,
+    weekGenerations: 0,
+    lastMonthGenerations: 0,
+  })
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    async function fetchStats() {
+      try {
+        const response = await fetch("/api/stats")
+        if (response.ok) {
+          const data = await response.json()
+          setStats(data)
+        }
+      } catch (error) {
+        console.error("[v0] Error fetching stats:", error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchStats()
+  }, [])
+
+  const displayStats = [
     {
-      name: "Total Projects",
-      value: "12",
-      change: "+2 this week",
-      icon: FolderKanban,
-    },
-    {
-      name: "AI Generations",
-      value: "48",
-      change: "+12 this week",
+      name: "Total Generations",
+      value: isLoading ? "..." : stats.totalGenerations.toString(),
+      change: `+${stats.weekGenerations} this week`,
       icon: Sparkles,
     },
     {
+      name: "This Week",
+      value: isLoading ? "..." : stats.weekGenerations.toString(),
+      change: "generations created",
+      icon: FolderKanban,
+    },
+    {
       name: "Time Saved",
-      value: "24h",
-      change: "+6h this week",
+      value: isLoading ? "..." : `${Math.round(stats.totalGenerations * 0.5)}h`,
+      change: "estimated hours",
       icon: Clock,
     },
     {
-      name: "Productivity",
-      value: "+45%",
-      change: "vs last month",
+      name: "Growth",
+      value: isLoading
+        ? "..."
+        : stats.lastMonthGenerations > 0
+          ? `+${Math.round(((stats.weekGenerations - stats.lastMonthGenerations) / stats.lastMonthGenerations) * 100)}%`
+          : "+100%",
+      change: "vs last period",
       icon: TrendingUp,
     },
   ]
 
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      {stats.map((stat) => {
+      {displayStats.map((stat) => {
         const Icon = stat.icon
         return (
           <Card key={stat.name} className="p-6">
