@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
 import { Sparkles, Send, Copy, ImageIcon, X, Save } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
-import { useChat } from "ai/react"
+import { useChat } from "@ai-sdk/react"
 import { Code2 } from "lucide-react" // Declaring Code2 variable
 
 interface Message {
