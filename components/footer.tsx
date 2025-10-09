@@ -34,8 +34,33 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
-            <Link href="/" className="mb-4 inline-block text-xl font-bold transition-opacity hover:opacity-80">
-              Recreate<span className="text-accent">AI</span>
+            <Link href="/" className="mb-4 inline-flex items-center gap-2 transition-opacity hover:opacity-80">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-foreground"
+              >
+                <defs>
+                  <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="currentColor" stopOpacity="0.9" />
+                    <stop offset="100%" stopColor="currentColor" stopOpacity="0.6" />
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#footerLogoGradient)" />
+                <path
+                  d="M9 12L16 8L23 12M9 20L16 24L23 20M9 16L16 20L23 16"
+                  stroke="white"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                />
+                <circle cx="16" cy="12" r="1.5" fill="white" />
+              </svg>
+              <span className="text-lg font-bold">Recreate<span className="text-accent">AI</span></span>
             </Link>
             <p className="mb-6 max-w-xs text-sm leading-relaxed text-muted-foreground">Transform designs into production-ready code with AI.</p>
             <div className="flex gap-4">
