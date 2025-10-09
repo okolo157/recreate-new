@@ -1,65 +1,60 @@
-import { Card } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Star } from "lucide-react"
+import { Quote } from "lucide-react"
 
 export function Testimonials() {
   const testimonials = [
     {
       name: "Sarah Chen",
-      role: "Lead Designer at TechCorp",
+      role: "Lead Designer",
+      company: "TechCorp",
       avatar: "/placeholder.svg?height=40&width=40",
       content:
         "This tool has completely transformed our workflow. We're shipping features 3x faster and our developers love the clean code it generates.",
-      rating: 5,
     },
     {
       name: "Michael Rodriguez",
       role: "Frontend Developer",
+      company: "Stripe",
       avatar: "/placeholder.svg?height=40&width=40",
       content:
         "The AI-generated code is surprisingly good. It follows best practices and is actually maintainable. Saves me hours every week.",
-      rating: 5,
     },
     {
       name: "Emily Watson",
-      role: "Product Manager at StartupXYZ",
+      role: "Product Manager",
+      company: "StartupXYZ",
       avatar: "/placeholder.svg?height=40&width=40",
       content:
         "Game changer for our small team. We can prototype and iterate so much faster now. The quality is consistently high.",
-      rating: 5,
     },
   ]
 
   return (
-    <section className="container mx-auto px-4 py-16 md:py-24">
-      <div className="mb-12 text-center">
-        <h2 className="mb-4 text-balance text-3xl font-bold md:text-4xl lg:text-5xl">
-          Loved by developers and designers
+    <section className="container mx-auto px-4 py-24 md:py-32">
+      <div className="mb-16 text-center">
+        <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+          Trusted by teams worldwide
         </h2>
-        <p className="mx-auto max-w-2xl text-pretty text-lg text-muted-foreground leading-relaxed">
-          Join thousands of teams who are building faster with AI-powered development.
+        <p className="mx-auto max-w-2xl text-pretty text-base text-muted-foreground/90 leading-[1.7]">
+          Join thousands of developers and designers building faster with AI-powered code generation.
         </p>
       </div>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {testimonials.map((testimonial, index) => (
-          <Card key={index} className="border-border/50 bg-card/50 p-6 backdrop-blur-sm">
-            <div className="mb-4 flex gap-1">
-              {Array.from({ length: testimonial.rating }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-              ))}
-            </div>
-            <p className="mb-6 text-pretty text-sm leading-relaxed">{testimonial.content}</p>
-            <div className="flex items-center gap-3">
-              <Avatar className="h-10 w-10">
+          <div key={index} className="group relative rounded-2xl border border-border/60 bg-background/40 backdrop-blur-sm p-8 transition-all duration-300 hover:border-border hover:bg-background/60 hover:shadow-sm">
+            <Quote className="h-8 w-8 text-muted-foreground/20 mb-4" />
+            <p className="mb-6 text-sm leading-[1.7] text-foreground/80">{testimonial.content}</p>
+            <div className="flex items-center gap-3 pt-4 border-t border-border/40">
+              <Avatar className="h-10 w-10 border border-border/60">
                 <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
-                <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                <AvatarFallback className="text-xs bg-muted">{testimonial.name.charAt(0)}</AvatarFallback>
               </Avatar>
               <div>
                 <p className="text-sm font-semibold">{testimonial.name}</p>
-                <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                <p className="text-xs text-muted-foreground/70">{testimonial.role} at {testimonial.company}</p>
               </div>
             </div>
-          </Card>
+          </div>
         ))}
       </div>
     </section>

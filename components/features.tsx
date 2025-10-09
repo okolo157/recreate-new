@@ -1,5 +1,4 @@
 import { Zap, Shield, Users, Code2 } from "lucide-react"
-import { Card } from "@/components/ui/card"
 
 export function Features() {
   const features = [
@@ -29,30 +28,31 @@ export function Features() {
   ]
 
   return (
-    <section className="container mx-auto px-4 py-20 md:py-32">
-      <div className="mb-16 text-center">
-        <h2 className="mb-6 text-balance text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-          The complete platform to build the web
+    <section className="relative container mx-auto px-4 py-24 md:py-32">
+      <div className="mb-20 text-center">
+        <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+          Built for modern teams
         </h2>
-        <p className="mx-auto max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">
-          Your team's toolkit to stop configuring and start innovating. Securely build, deploy, and scale the best web
-          experiences.
+        <p className="mx-auto max-w-2xl text-pretty text-base leading-[1.7] text-muted-foreground/90">
+          Everything you need to transform designs into production-ready code. Secure, fast, and built for scale.
         </p>
       </div>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         {features.map((feature, index) => {
           const Icon = feature.icon
           return (
-            <Card
+            <div
               key={index}
-              className="group relative overflow-hidden border-border/50 bg-card/30 p-6 backdrop-blur-sm transition-all hover:border-accent/30 hover:bg-card/50 hover:shadow-lg"
+              className="group relative"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 transition-all group-hover:bg-accent/20 group-hover:scale-110">
-                <Icon className="h-6 w-6 text-accent transition-transform group-hover:scale-110" />
+              <div className="relative h-full rounded-2xl border border-border/60 bg-background/40 backdrop-blur-sm p-8 transition-all duration-300 hover:border-border hover:bg-background/60 hover:shadow-sm">
+                <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-muted/50 transition-colors group-hover:bg-muted">
+                  <Icon className="h-5 w-5 text-foreground/70" />
+                </div>
+                <h3 className="mb-2 text-lg font-semibold">{feature.title}</h3>
+                <p className="text-sm leading-[1.6] text-muted-foreground/80">{feature.description}</p>
               </div>
-              <h3 className="mb-3 text-xl font-semibold">{feature.title}</h3>
-              <p className="text-pretty text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
-            </Card>
+            </div>
           )
         })}
       </div>
