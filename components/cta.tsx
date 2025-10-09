@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export function CTA() {
   return (
-    <section className="container mx-auto px-4 py-24 md:py-32">
+    <section className="container mx-auto px-4">
       <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-br from-muted/50 to-background p-12 md:p-16 lg:p-20">
         <div className="relative z-10 mx-auto max-w-3xl text-center">
           <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
@@ -15,7 +15,7 @@ export function CTA() {
           </p>
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row mb-6">
             <Button asChild size="lg" className="group h-11 gap-2 rounded-full px-7 text-sm font-medium shadow-sm transition-all hover:shadow-md">
-              <Link href="/signup">
+              <Link href="/signup" className="cursor-pointer">
                 Start for free
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>

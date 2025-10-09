@@ -19,13 +19,19 @@ export default function SignupPage() {
             </svg>
           </Link>
           <h1 className="text-3xl font-bold">Create an account</h1>
-          <p className="mt-2 text-muted-foreground">Get started with BuildAI today</p>
+          <p className="mt-2 text-muted-foreground">Get started with Recreate AI today</p>
         </div>
         <SignupForm />
         <p className="mt-6 text-center text-sm text-muted-foreground">
           Already have an account?{" "}
           <Link href="/login" className="font-medium text-foreground hover:underline">
             Sign in
+          </Link>
+        </p>
+
+        <p className="hover:text-underline text-sm mt-2 w-full flex justify-center items-center">
+          <Link href="/">
+          Back to Dashboard
           </Link>
         </p>
       </div>

@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export function Hero() {
   return (
-    <section className="relative container mx-auto px-4 pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden">
+    <section className="relative container mx-auto px-4 pt-24 pb-18 md:pt-32 md:pb-32 overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-muted/30 via-background to-background" />
       <div className="mx-auto max-w-4xl text-center">
         <div className="mb-6 inline-block">
