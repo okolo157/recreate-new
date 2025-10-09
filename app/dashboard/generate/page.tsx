@@ -1,5 +1,11 @@
+'use client'
+
+import dynamic from 'next/dynamic'
 import { DashboardHeader } from "@/components/dashboard/dashboard-header"
-import { AIGenerator } from "@/components/ai/ai-generator"
+
+const AIGenerator = dynamic(() => import("@/components/ai/ai-generator").then(mod => ({ default: mod.AIGenerator })), {
+  ssr: false,
+})
 
 export default function GeneratePage() {
   return (

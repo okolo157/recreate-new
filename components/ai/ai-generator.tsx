@@ -46,7 +46,7 @@ export function AIGenerator() {
         setLastGeneratedCode({
           code: codeBlocks[0].code,
           language: codeBlocks[0].language,
-          prompt: lastUserMessage?.content || input,
+          prompt: lastUserMessage?.content || input || "",
         })
       }
     },

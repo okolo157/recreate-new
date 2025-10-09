@@ -30,18 +30,18 @@ export function Footer() {
   }
 
   return (
-    <footer className="border-t border-border/50 bg-background">
+    <footer className="border-t border-border/50 bg-muted/30">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
-            <Link href="/" className="mb-4 inline-block text-xl font-bold">
+            <Link href="/" className="mb-4 inline-block text-xl font-bold transition-opacity hover:opacity-80">
               Recreate<span className="text-accent">AI</span>
             </Link>
-            <p className="mb-4 text-sm text-muted-foreground">Transform designs into production-ready code with AI.</p>
+            <p className="mb-6 max-w-xs text-sm leading-relaxed text-muted-foreground">Transform designs into production-ready code with AI.</p>
             <div className="flex gap-4">
               <Link
                 href="https://github.com"
-                className="text-muted-foreground transition-colors hover:text-foreground"
+                className="inline-flex items-center justify-center rounded-lg p-2 text-muted-foreground transition-all hover:bg-accent/10 hover:text-foreground"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -50,7 +50,7 @@ export function Footer() {
               </Link>
               <Link
                 href="https://twitter.com"
-                className="text-muted-foreground transition-colors hover:text-foreground"
+                className="inline-flex items-center justify-center rounded-lg p-2 text-muted-foreground transition-all hover:bg-accent/10 hover:text-foreground"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -59,7 +59,7 @@ export function Footer() {
               </Link>
               <Link
                 href="https://linkedin.com"
-                className="text-muted-foreground transition-colors hover:text-foreground"
+                className="inline-flex items-center justify-center rounded-lg p-2 text-muted-foreground transition-all hover:bg-accent/10 hover:text-foreground"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -75,7 +75,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-sm text-muted-foreground transition-all hover:translate-x-0.5 hover:text-foreground"
                   >
                     {link.name}
                   </Link>
@@ -90,7 +90,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-sm text-muted-foreground transition-all hover:translate-x-0.5 hover:text-foreground"
                   >
                     {link.name}
                   </Link>
@@ -105,7 +105,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-sm text-muted-foreground transition-all hover:translate-x-0.5 hover:text-foreground"
                   >
                     {link.name}
                   </Link>
@@ -120,7 +120,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-sm text-muted-foreground transition-all hover:translate-x-0.5 hover:text-foreground"
                   >
                     {link.name}
                   </Link>

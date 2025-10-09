@@ -29,12 +29,12 @@ export function Features() {
   ]
 
   return (
-    <section className="container mx-auto px-4 py-16 md:py-24">
-      <div className="mb-12 text-center">
-        <h2 className="mb-4 text-balance text-3xl font-bold md:text-4xl lg:text-5xl">
+    <section className="container mx-auto px-4 py-20 md:py-32">
+      <div className="mb-16 text-center">
+        <h2 className="mb-6 text-balance text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
           The complete platform to build the web
         </h2>
-        <p className="mx-auto max-w-2xl text-pretty text-lg text-muted-foreground leading-relaxed">
+        <p className="mx-auto max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">
           Your team's toolkit to stop configuring and start innovating. Securely build, deploy, and scale the best web
           experiences.
         </p>
@@ -45,13 +45,13 @@ export function Features() {
           return (
             <Card
               key={index}
-              className="border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-colors hover:bg-card"
+              className="group relative overflow-hidden border-border/50 bg-card/30 p-6 backdrop-blur-sm transition-all hover:border-accent/30 hover:bg-card/50 hover:shadow-lg"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                <Icon className="h-6 w-6 text-accent" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 transition-all group-hover:bg-accent/20 group-hover:scale-110">
+                <Icon className="h-6 w-6 text-accent transition-transform group-hover:scale-110" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold">{feature.title}</h3>
-              <p className="text-pretty text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+              <h3 className="mb-3 text-xl font-semibold">{feature.title}</h3>
+              <p className="text-pretty text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
             </Card>
           )
         })}
